@@ -1,4 +1,4 @@
-package dev.red.coursemvvm.view
+package dev.red.coursemvvm.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import dev.red.coursemvvm.databinding.ActivityMainBinding
-import dev.red.coursemvvm.viewmodel.QuoteViewModel
+import dev.red.coursemvvm.presentation.viewmodel.QuoteViewModel
 
 class MainActivity : AppCompatActivity() {
 
