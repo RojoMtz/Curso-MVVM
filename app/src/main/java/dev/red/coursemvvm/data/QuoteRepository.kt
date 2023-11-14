@@ -3,14 +3,15 @@ package dev.red.coursemvvm.data
 import dev.red.coursemvvm.data.model.QuoteModel
 import dev.red.coursemvvm.data.model.QuoteProvider
 import dev.red.coursemvvm.data.network.QuoteService
+import javax.inject.Inject
 
-class QuoteRepository {
-
-    private val api = QuoteService()
-
+class QuoteRepository @Inject constructor(
+    private val api: QuoteService,
+    private val quoteProvider: QuoteProvider
+) {
     suspend fun getAllQuotes():List<QuoteModel>{
-        val response: List<QuoteModel> = api.getQuotes()
-        QuoteProvider.quotes = response
+        val response = api.getQuotes()
+        quoteProvider.quotes = response
         return response
     }
 }
